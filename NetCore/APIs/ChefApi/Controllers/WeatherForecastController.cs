@@ -1,4 +1,4 @@
-namespace Api.Controllers
+namespace Chef.Api.Controllers
 {
 	using Microsoft.AspNetCore.Mvc;
 
