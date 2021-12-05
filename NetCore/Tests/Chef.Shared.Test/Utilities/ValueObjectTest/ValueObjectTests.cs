@@ -98,8 +98,7 @@ namespace Chef.Shared.Test.Utilities.ValueObjectTest
 		[TestMethod]
 		public void OperatorEquals_BothValuesNull_ReturnsTrue()
 		{
-
-			Assert.IsTrue((ValueObjectModel)null == (ValueObjectModel)null);
+			Assert.IsTrue(null == (ValueObjectModel) null);
 		}
 
 		[TestMethod]
@@ -121,7 +120,7 @@ namespace Chef.Shared.Test.Utilities.ValueObjectTest
 		[TestMethod]
 		public void OperatorNotEquals_BothValuesNull_ReturnsFalse()
 		{
-			Assert.IsFalse((ValueObjectModel)null != (ValueObjectModel)null);
+			Assert.IsFalse(null != (ValueObjectModel) null);
 		}
 
 		[TestMethod]
