@@ -21,6 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chef.Infrastructure", "NetC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chef.Shared", "NetCore\APIs\ChefShared\Chef.Shared.csproj", "{5E078BAB-5E72-4041-8DA6-854314A968D7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chef.Shared.Test", "NetCore\Tests\Chef.Shared.Test\Chef.Shared.Test.csproj", "{5DFD6758-5F21-486A-9B1F-B7634B09987D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84249295-E6E3-4813-8D95-A068C1BE5789}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +50,10 @@ Global
 		{5E078BAB-5E72-4041-8DA6-854314A968D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E078BAB-5E72-4041-8DA6-854314A968D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E078BAB-5E72-4041-8DA6-854314A968D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DFD6758-5F21-486A-9B1F-B7634B09987D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFD6758-5F21-486A-9B1F-B7634B09987D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFD6758-5F21-486A-9B1F-B7634B09987D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFD6758-5F21-486A-9B1F-B7634B09987D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +67,7 @@ Global
 		{9918615C-CC75-4FFB-BB20-C53FEB738211} = {372D5DE0-3A7F-4C84-A17C-AEDABEBAEEFE}
 		{2A1FC5EF-73B7-421D-9E67-69F48FB67441} = {372D5DE0-3A7F-4C84-A17C-AEDABEBAEEFE}
 		{5E078BAB-5E72-4041-8DA6-854314A968D7} = {372D5DE0-3A7F-4C84-A17C-AEDABEBAEEFE}
+		{5DFD6758-5F21-486A-9B1F-B7634B09987D} = {8C7451DD-DA74-4CC3-B1A5-5017AE2883CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87308979-817A-4F31-9FAC-F10C67E89EE1}
