@@ -1,4 +1,4 @@
-﻿namespace Chef.Shared.Test.Utilities.ValueObject
+﻿namespace Chef.Shared.Test.Utilities.ValueObjectTest.Models
 {
     using Chef.Shared.Utilities.Value;
 
@@ -21,6 +21,8 @@
         private readonly int privateField;
 
         protected int ProtectedProperty { get; set; }
-        private int PrivateProperty { get; set; }
-    }
+#pragma warning disable IDE0052 // Remove unread private members
+		private int PrivateProperty { get; set; }
+#pragma warning restore IDE0052 // Remove unread private members
+	}
 }
