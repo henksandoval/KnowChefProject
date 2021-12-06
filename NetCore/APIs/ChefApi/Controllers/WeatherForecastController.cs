@@ -1,6 +1,5 @@
 namespace Chef.Api.Controllers
 {
-	using Chef.Core.Domains.Models;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Localization;
 
@@ -21,11 +20,6 @@ namespace Chef.Api.Controllers
 		public IEnumerable<WeatherForecast> Get()
 		{
 			var r = localizer["RecipeNameInvalid"];
-			//Recipe recipe;
-			//if (error)
-			//	recipe = new Recipe(string.Empty, "Einz'ges ich");
-			//else
-			//	recipe = new Recipe("Soasas", "Einz'ges ich");
 
 			return new List<WeatherForecast>
 			{

@@ -98,6 +98,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RecipeNameInvalid" xml:space="preserve">
-    <value>The value by recipe name is empty or if only white spaces.</value>
+    <value>Getting value from Chef.Api</value>
   </data>
 </root>

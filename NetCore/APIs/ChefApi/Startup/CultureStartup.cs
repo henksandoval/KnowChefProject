@@ -23,7 +23,7 @@
 					options.SupportedUICultures = supportedCultures;
 					options.RequestCultureProviders = new List<IRequestCultureProvider>
 					{
-						new RouteDataRequestCultureProvider { IndexOfCulture = 1, IndexofUICulture = 1 }
+						new RouteDataRequestCultureProvider()
 					};
 				})
 				.Configure<RouteOptions>(options =>

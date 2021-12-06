@@ -4,6 +4,9 @@
 	using Chef.Core.Domains.Models;
 	using Chef.Core.Domains.Exceptions;
 	using NUnit.Framework;
+	using Microsoft.AspNetCore.Localization;
+	using System.Threading;
+	using System.Globalization;
 
 	[TestFixture]
 	internal class RecipeTest
@@ -16,15 +19,24 @@
 			Assert.AreEqual(description, recipe.Description);
 		}
 
-		[TestCase("", "", "The value by recipe name is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfNameIsEmpty")]
-		[TestCase("", "", "El valor para nombre de receta esta vacio o contiene solo espacios en blanco.", TestName = "ShouldThrowExceptionIfNameIsEmptyInSpanish")]
-		[TestCase("Cose segreto piene", "", "The value by recipe description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
-		public void ShouldThrowExceptionIfIsEmpty(string name, string description, string expectedErrorMessage)
+		[TestCase("", "", ExpectedResult = "The value by recipe name is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfNameIsEmpty")]
+		[TestCase("Cose segreto piene", "", ExpectedResult = "The value by recipe description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
+		public string ShouldThrowExceptionIfIsEmpty(string name, string description)
 		{
 			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe(name, description));
 
-			Assert.AreEqual(expectedErrorMessage, ex?.Message);
+			return ex?.Message ?? string.Empty;
 		}
 
+		[Test]
+		[SetUICulture("es")]
+		public void ShouldThrowExceptionIfDescriptionIsEmptyInSpanish()
+		{
+			var expectedResult = "El valor para descripción de receta esta vacio o contiene solo espacios en blanco.";
+
+			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe("Consume los", string.Empty));
+
+			Assert.AreEqual(expectedResult, ex?.Message);
+		}
 	}
 }
