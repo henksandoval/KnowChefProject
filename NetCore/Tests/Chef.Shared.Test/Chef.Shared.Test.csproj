@@ -18,19 +18,4 @@
     <ProjectReference Include="..\..\APIs\ChefShared\Chef.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Resources\ResourceEng.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ResourceEng.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\ResourceEng.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceEng.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>

@@ -1,33 +1,39 @@
 namespace Chef.Api.Controllers
 {
+	using Chef.Core.Domains.Models;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.Extensions.Localization;
 
 	[ApiController]
-	[Route("[controller]")]
+	[Route("{culture:culture}/[controller]")]
 	public class WeatherForecastController : ControllerBase
 	{
-		private static readonly string[] Summaries = new[]
-		{
-		"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-	};
+		private readonly IStringLocalizer<SharedResource> localizer;
+		private readonly ILogger<WeatherForecastController> logger;
 
-		private readonly ILogger<WeatherForecastController> _logger;
-
-		public WeatherForecastController(ILogger<WeatherForecastController> logger)
+		public WeatherForecastController(IStringLocalizer<SharedResource> localizer, ILogger<WeatherForecastController> logger)
 		{
-			_logger = logger;
+			this.localizer = localizer;
+			this.logger = logger;
 		}
 
 		[HttpGet(Name = "GetWeatherForecast")]
 		public IEnumerable<WeatherForecast> Get()
 		{
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+			var r = localizer["RecipeNameInvalid"];
+			//Recipe recipe;
+			//if (error)
+			//	recipe = new Recipe(string.Empty, "Einz'ges ich");
+			//else
+			//	recipe = new Recipe("Soasas", "Einz'ges ich");
+
+			return new List<WeatherForecast>
 			{
-				Date = DateTime.Now.AddDays(index),
-				TemperatureC = Random.Shared.Next(-20, 55),
-				Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-			})
-			.ToArray();
+				new WeatherForecast
+				{
+					Summary = r
+				}
+			};
 		}
 	}
 }

@@ -17,8 +17,9 @@
 		}
 
 		[TestCase("", "", "The value by recipe name is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfNameIsEmpty")]
-		[TestCase("Cose segreto piene", "", "The property Description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
-		public void ShouldThrowExceptionIfNameIsEmpty(string name, string description, string expectedErrorMessage)
+		[TestCase("", "", "El valor para nombre de receta esta vacio o contiene solo espacios en blanco.", TestName = "ShouldThrowExceptionIfNameIsEmptyInSpanish")]
+		[TestCase("Cose segreto piene", "", "The value by recipe description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
+		public void ShouldThrowExceptionIfIsEmpty(string name, string description, string expectedErrorMessage)
 		{
 			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe(name, description));
 
