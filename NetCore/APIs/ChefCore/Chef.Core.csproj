@@ -10,4 +10,8 @@
     <Folder Include="Application\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChefShared\Chef.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

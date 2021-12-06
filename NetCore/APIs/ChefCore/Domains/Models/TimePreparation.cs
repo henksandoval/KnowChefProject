@@ -1,4 +1,4 @@
-﻿namespace ChefCore.Domains.Entities
+﻿namespace Chef.Core.Domains.Models
 {
 	public class TimePreparation
 	{
