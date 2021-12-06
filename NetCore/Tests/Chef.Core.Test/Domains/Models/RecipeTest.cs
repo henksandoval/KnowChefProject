@@ -2,6 +2,7 @@
 {
 	using System;
 	using Chef.Core.Domains.Models;
+	using Chef.Core.Domains.Exceptions;
 	using NUnit.Framework;
 
 	[TestFixture]
@@ -15,20 +16,14 @@
 			Assert.AreEqual(description, recipe.Description);
 		}
 
-		[Test]
-		public void ShouldThrowExceptionIfNameIsEmpty()
+		[TestCase("", "", "The value by recipe name is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfNameIsEmpty")]
+		[TestCase("Cose segreto piene", "", "The property Description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
+		public void ShouldThrowExceptionIfNameIsEmpty(string name, string description, string expectedErrorMessage)
 		{
-			var ex = Assert.Throws<ArgumentException>(() => new Recipe(string.Empty, string.Empty));
+			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe(name, description));
 
-			Assert.AreEqual($"The property Name is empty or if only white spaces.", ex?.Message);
+			Assert.AreEqual(expectedErrorMessage, ex?.Message);
 		}
 
-		[Test]
-		public void ShouldThrowExceptionIfDescriptionIsEmpty()
-		{
-			var ex = Assert.Throws<ArgumentException>(() => new Recipe("Una", string.Empty));
-
-			Assert.AreEqual($"The property Description is empty or if only white spaces.", ex?.Message);
-		}
 	}
 }
