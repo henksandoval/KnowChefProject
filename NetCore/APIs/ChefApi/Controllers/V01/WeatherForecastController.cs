@@ -1,5 +1,6 @@
 namespace Chef.Api.Controllers.V01
 {
+	using Chef.Core.Resources.Exceptions;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Localization;
@@ -8,34 +9,60 @@ namespace Chef.Api.Controllers.V01
 	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	public class WeatherForecastController : BaseController<WeatherForecastController>
 	{
-		private readonly IStringLocalizer<SharedResource> localizer;
+		private readonly IStringLocalizer<DomainResourceException> localizer;
 
-		public WeatherForecastController(IStringLocalizer<SharedResource> localizer, ILogger<WeatherForecastController> logger)
+		public WeatherForecastController(IStringLocalizer<DomainResourceException> localizer, ILogger<WeatherForecastController> logger)
 			:base(logger)
 		{
 			this.localizer = localizer;
 		}
 
 		/// <summary>
-		/// Gets a list of weather
+		/// Gets a list of weather using DomainResourceExceptions from Core Layer
 		/// </summary>
-		/// <param name="temperature">The requested business partner identifier.</param>
+		/// <param name="temperature">Value of temperature.</param>
 		/// <returns>The requested business partner.</returns>
-		/// <response code="200">The business partner was successfully retrieved.</response>
-		/// <response code="404">The business partner does not exist.</response>
+		/// <response code="200">The data was successfully retrieved.</response>
+		/// <response code="404">A error an occurred.</response>
 		[HttpGet]
-		public IEnumerable<WeatherForecast> Get(int? temperature)
+		[Route("UseDomainResourceException")]
+		public IActionResult UseDomainResourceException(int? temperature)
 		{
 			var r = localizer["RecipeNameInvalid"];
 
-			return new List<WeatherForecast>
-			{
+			var data = Enumerable.Range(0, 15).Select(i => 
 				new WeatherForecast
 				{
 					TemperatureC = temperature ?? 0,
 					Summary = r
 				}
-			};
+			);
+
+			return Ok(data);
+		}
+
+		/// <summary>
+		/// Gets a list of weather using UseSharedResourceException from Shared Layer
+		/// </summary>
+		/// <param name="temperature">Value of temperature.</param>
+		/// <returns>The requested business partner.</returns>
+		/// <response code="200">The data was successfully retrieved.</response>
+		/// <response code="404">A error an occurred.</response>
+		[HttpGet]
+		[Route("UseSharedResourceException")]
+		public IActionResult UseSharedResourceException(int? temperature)
+		{
+			var r = SharedResource.Welcome;
+
+			var data = Enumerable.Range(0, 15).Select(i => 
+				new WeatherForecast
+				{
+					TemperatureC = temperature ?? 0,
+					Summary = r
+				}
+			);
+
+			return Ok(data);
 		}
 	}
 }

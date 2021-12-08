@@ -18,14 +18,23 @@
             </summary>
             <returns>Return a list of int from 0 to 15</returns>
         </member>
-        <member name="M:Chef.Api.Controllers.V01.WeatherForecastController.Get(System.Nullable{System.Int32})">
+        <member name="M:Chef.Api.Controllers.V01.WeatherForecastController.UseDomainResourceException(System.Nullable{System.Int32})">
             <summary>
-            Gets a list of weather
+            Gets a list of weather using DomainResourceExceptions from Core Layer
             </summary>
-            <param name="temperature">The requested business partner identifier.</param>
+            <param name="temperature">Value of temperature.</param>
             <returns>The requested business partner.</returns>
-            <response code="200">The business partner was successfully retrieved.</response>
-            <response code="404">The business partner does not exist.</response>
+            <response code="200">The data was successfully retrieved.</response>
+            <response code="404">A error an occurred.</response>
+        </member>
+        <member name="M:Chef.Api.Controllers.V01.WeatherForecastController.UseSharedResourceException(System.Nullable{System.Int32})">
+            <summary>
+            Gets a list of weather using UseSharedResourceException from Shared Layer
+            </summary>
+            <param name="temperature">Value of temperature.</param>
+            <returns>The requested business partner.</returns>
+            <response code="200">The data was successfully retrieved.</response>
+            <response code="404">A error an occurred.</response>
         </member>
         <member name="M:Chef.Api.Controllers.V1.RecipeController.Get">
             <summary>
