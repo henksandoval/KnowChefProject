@@ -4,7 +4,6 @@ namespace Chef.Api.Controllers.V1
 	using Microsoft.AspNetCore.Mvc;
 
 	[ApiVersion("1")]
-	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	public class WeatherForecastController : BaseController<WeatherForecastController>
 	{
 		public WeatherForecastController(ILogger<WeatherForecastController> logger)

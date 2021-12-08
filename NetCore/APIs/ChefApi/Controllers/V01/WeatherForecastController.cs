@@ -6,7 +6,6 @@ namespace Chef.Api.Controllers.V01
 	using Microsoft.Extensions.Localization;
 
 	[ApiVersion("0.1")]
-	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	public class WeatherForecastController : BaseController<WeatherForecastController>
 	{
 		private readonly IStringLocalizer<DomainResourceException> localizer;

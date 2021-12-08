@@ -1,5 +1,6 @@
-﻿namespace Chef.Api.Culture
+﻿namespace Chef.Infrastructure.Configurations.Culture
 {
+	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Localization;
 
 	public class RouteDataRequestCultureProvider : RequestCultureProvider
@@ -13,7 +14,7 @@
 
 			var culture = httpContext?.Request?.Path.Value?.Split('/')[indexOfCulture]?.ToString();
 
-			ProviderCultureResult providerResultCulture = new(culture);
+			var providerResultCulture = new ProviderCultureResult(culture);
 
 			return Task.FromResult(providerResultCulture);
 		}

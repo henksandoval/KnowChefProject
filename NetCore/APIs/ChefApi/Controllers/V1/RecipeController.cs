@@ -6,7 +6,6 @@ namespace Chef.Api.Controllers.V1
 	using Microsoft.Extensions.Localization;
 
 	[ApiVersion("1")]
-	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	public class RecipeController : BaseController<RecipeController>
 	{
 		private readonly IStringLocalizer<DomainResourceException> localizer;

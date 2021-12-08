@@ -4,7 +4,6 @@
 	using Microsoft.Extensions.Logging;
 
 	[ApiVersion("0.1")]
-	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	public class ValuesController : BaseController<ValuesController>
 	{
 		public ValuesController(ILogger<ValuesController> logger) : base(logger)

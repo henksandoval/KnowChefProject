@@ -7,15 +7,33 @@
 	using Microsoft.Extensions.Logging;
 
 	[ApiController]
+	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
 	[Produces("application/json")]
 	public abstract class BaseController<TController> : ControllerBase
 	{
 		protected readonly ILogger<TController> logger;
-		protected string? ControllerNameTranslated => SharedResource.ResourceManager.GetString(GetType().Name);
+		protected string controllerNameTranslated;
 
 		public BaseController(ILogger<TController> logger)
 		{
 			this.logger = logger;
+			controllerNameTranslated = GetResourceNameByController();
+		}
+
+		private string GetResourceNameByController()
+		{
+			string? value;
+
+			try
+			{
+				value = SharedResource.ResourceManager.GetString(GetType().Name);
+			}
+			catch
+			{
+				value = string.Empty;
+			}
+
+			return value ?? string.Empty;
 		}
 
 		protected object GenerateMessageTranslated(string recordName, TypeAction typeAction)
@@ -28,6 +46,7 @@
 					return GenerateMessageUpdateTranslated(recordName);
 				case TypeAction.Delete:
 					return GenerateMessageDeleteTranslated(recordName);
+				case TypeAction.Read:
 				default:
 					throw new InvalidEnumArgumentException($"The type {typeAction} not is a type selector valid.");
 			}

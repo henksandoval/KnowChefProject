@@ -1,4 +1,3 @@
-using Chef.Api.Startup;
 using Chef.Infrastructure.Configurations.Startup;
 using Microsoft.Extensions.Options;
 
@@ -6,9 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+_ = builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services
+_ = builder.Services
 	.AddEndpointsApiExplorer()
 	.ConfigCulture()
 	.ConfigSwagger();
@@ -18,17 +17,16 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.ConfigSwagger();
+	_ = app.ConfigSwagger();
 }
 
 var localizationOption = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
 if (localizationOption is not null)
-	app.UseRequestLocalization(localizationOption.Value);
+	_ = app.UseRequestLocalization(localizationOption.Value);
 
-app.UseHttpsRedirection();
+_ =	app
+	.UseHttpsRedirection()
+	.UseAuthorization();
 
-app.UseAuthorization();
-
-app.MapControllers();
-
+_ = app.MapControllers();
 app.Run();
