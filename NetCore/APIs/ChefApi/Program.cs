@@ -10,16 +10,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services
 	.AddEndpointsApiExplorer()
-	.AddSwaggerGen()
-	.ConfigureCulture();
+	.ConfigCulture()
+	.ConfigSwagger();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+	app.ConfigSwagger();
 }
 
 var localizationOption = app.Services.GetService<IOptions<RequestLocalizationOptions>>();

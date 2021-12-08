@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Chef.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:Chef.Shared.Resources.SharedResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Actions">
+            <summary>
+              Looks up a localized string similar to Actions.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Active">
+            <summary>
+              Looks up a localized string similar to Active.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Add">
+            <summary>
+              Looks up a localized string similar to Add.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.AuditableFields">
+            <summary>
+              Looks up a localized string similar to Auditable fields.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Cancelled">
+            <summary>
+              Looks up a localized string similar to Cancelled.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CancelledOperation">
+            <summary>
+              Looks up a localized string similar to Operation cancelled!.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Close">
+            <summary>
+              Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CompareConfirmationPassword">
+            <summary>
+              Looks up a localized string similar to The password and confirmation password do not match..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ComparePatternPassword">
+            <summary>
+              Looks up a localized string similar to Passwords must have uppercase and lowercase letters, numbers, and at least one non-alphanumeric character.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Condition">
+            <summary>
+              Looks up a localized string similar to Condition.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Confirm">
+            <summary>
+              Looks up a localized string similar to Confirm.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmationMessageCreate">
+            <summary>
+              Looks up a localized string similar to You have successfully created the record {0}..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmationMessageDelete">
+            <summary>
+              Looks up a localized string similar to You have successfully deleted the record {0}..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmationMessageUpdate">
+            <summary>
+              Looks up a localized string similar to You have successfully updated the record {0}..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmationNewPassword">
+            <summary>
+              Looks up a localized string similar to Confirmation of new password.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmationQuestion">
+            <summary>
+              Looks up a localized string similar to Are you sure?.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ConfirmRegister">
+            <summary>
+              Looks up a localized string similar to Confirm register.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Create">
+            <summary>
+              Looks up a localized string similar to Create.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Created">
+            <summary>
+              Looks up a localized string similar to Created.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CreatedBy">
+            <summary>
+              Looks up a localized string similar to Created by.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CreationDate">
+            <summary>
+              Looks up a localized string similar to Date of creation.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CultureDateFormat">
+            <summary>
+              Looks up a localized string similar to mm/dd/yyyy.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CultureDateTimeFormat">
+            <summary>
+              Looks up a localized string similar to MM/DD/YYYY h:mm:ss.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.CultureFormat">
+            <summary>
+              Looks up a localized string similar to en-US.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.DataTableLanguage">
+            <summary>
+              Looks up a localized string similar to /lib/DataTables-1.10.20/json/English.json.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Deleted">
+            <summary>
+              Looks up a localized string similar to Deleted.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.DeleteWarningMessage">
+            <summary>
+              Looks up a localized string similar to You will not be able to recover this record..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.EmailInvalid">
+            <summary>
+              Looks up a localized string similar to The {0} field is not a valid e-mail address..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.English">
+            <summary>
+              Looks up a localized string similar to English.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Field">
+            <summary>
+              Looks up a localized string similar to Field.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.FirstLogin">
+            <summary>
+              Looks up a localized string similar to First login?.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ForgotPassword">
+            <summary>
+              Looks up a localized string similar to Forgot your password?.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Help">
+            <summary>
+              Looks up a localized string similar to Help.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Home">
+            <summary>
+              Looks up a localized string similar to Home.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Id">
+            <summary>
+              Looks up a localized string similar to Id.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Inactive">
+            <summary>
+              Looks up a localized string similar to Inactive.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.InvalidLoginAttempt">
+            <summary>
+              Looks up a localized string similar to Invalid login attempt..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.IsActive">
+            <summary>
+              Looks up a localized string similar to Is active.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.IsDeleted">
+            <summary>
+              Looks up a localized string similar to Is deleted.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.IsRequired">
+            <summary>
+              Looks up a localized string similar to {0} field is required..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.IsRequiredSimple">
+            <summary>
+              Looks up a localized string similar to The field is required..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Login">
+            <summary>
+              Looks up a localized string similar to Login.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Logout">
+            <summary>
+              Looks up a localized string similar to Logout.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.MinLength">
+            <summary>
+              Looks up a localized string similar to The {0} field must be at least {1} characters long..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.MinMaxLength">
+            <summary>
+              Looks up a localized string similar to The {0} field must be between {2} and {1} characters long..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ModificationDate">
+            <summary>
+              Looks up a localized string similar to Modification date.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ModifiedBy">
+            <summary>
+              Looks up a localized string similar to Modified by.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.MyProfile">
+            <summary>
+              Looks up a localized string similar to My profile.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.NewTag">
+            <summary>
+              Looks up a localized string similar to New tag.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Next">
+            <summary>
+              Looks up a localized string similar to Next.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.No">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.NoCancel">
+            <summary>
+              Looks up a localized string similar to No, cancel!.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.PasswordResetLink1">
+            <summary>
+              Looks up a localized string similar to The password has been changed successfully. Please.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.PasswordResetLink2">
+            <summary>
+              Looks up a localized string similar to click here to log in.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.PlaceholderSelect2">
+            <summary>
+              Looks up a localized string similar to Choose a item.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Previous">
+            <summary>
+              Looks up a localized string similar to Previous.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Read">
+            <summary>
+              Looks up a localized string similar to Detail view.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.RecoverDeleted">
+            <summary>
+              Looks up a localized string similar to Recover record.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.RecoveryPassword">
+            <summary>
+              Looks up a localized string similar to Password recovery.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Restart">
+            <summary>
+              Looks up a localized string similar to Restart.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Return">
+            <summary>
+              Looks up a localized string similar to Return.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Save">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Search">
+            <summary>
+              Looks up a localized string similar to Search.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.SearchPanel">
+            <summary>
+              Looks up a localized string similar to Search panel.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Select2Language">
+            <summary>
+              Looks up a localized string similar to https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/en.js.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Settings">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ShowDeletedRecords">
+            <summary>
+              Looks up a localized string similar to Show deleted records.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ShowInactiveRecords">
+            <summary>
+              Looks up a localized string similar to Show inactive records.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Spanish">
+            <summary>
+              Looks up a localized string similar to Spanish.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Status">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Submit">
+            <summary>
+              Looks up a localized string similar to Submit.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Update">
+            <summary>
+              Looks up a localized string similar to Update.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Updated">
+            <summary>
+              Looks up a localized string similar to Updated.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.UpdateDate">
+            <summary>
+              Looks up a localized string similar to Update date.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.UpdatedBy">
+            <summary>
+              Looks up a localized string similar to Updated by.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.UserLoggedIn">
+            <summary>
+              Looks up a localized string similar to User logged in..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.ValidYear">
+            <summary>
+              Looks up a localized string similar to Enter a valid 4 digit Year..
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Value">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Welcome">
+            <summary>
+              Looks up a localized string similar to Welcome.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.Yes">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="P:Chef.Shared.Resources.SharedResource.YesSure">
+            <summary>
+              Looks up a localized string similar to Yes, I&apos;m sure!.
+            </summary>
+        </member>
+        <member name="M:Chef.Shared.Utilities.Extensions.StringExtensions.ThrowIfNullOrWhiteSpace(System.String,System.String,System.String)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentNullException" /> if <paramref name="value" /> is null.
+            Throws an <see cref="T:System.ArgumentException" /> if <paramref name="value" /> is an empty string or consists only of white-space.
+            </summary>
+            <param name="value"> The string to test.</param>
+            <param name="parameterName"> Parameter name to be verified</param>
+            <param name="message">Optional. Custom error message</param>
+            <returns><paramref name="value" /> If the value is not null, empty or whitespace string</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>

@@ -6,9 +6,9 @@
 
 	public static class CultureStartup
 	{
-		public static IServiceCollection ConfigureCulture(this IServiceCollection services)
+		public static IServiceCollection ConfigCulture(this IServiceCollection services)
 		{
-			services
+			_ = services
 				.AddLocalization()
 				.Configure<RequestLocalizationOptions>(options =>
 				{

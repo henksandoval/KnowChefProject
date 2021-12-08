@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Chef.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Chef.Api.Controllers.V01.RecipeController.Get">
+            <summary>
+            Gets a list of weather
+            </summary>
+            <returns>The requested business partner.</returns>
+            <response code="200">The business partner was successfully retrieved.</response>
+            <response code="404">The business partner does not exist.</response>
+        </member>
+        <member name="M:Chef.Api.Controllers.V01.ValuesController.Get">
+            <summary>
+            Return a list of int from 0 to 15
+            </summary>
+            <returns>Return a list of int from 0 to 15</returns>
+        </member>
+        <member name="M:Chef.Api.Controllers.V01.WeatherForecastController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Gets a list of weather
+            </summary>
+            <param name="temperature">The requested business partner identifier.</param>
+            <returns>The requested business partner.</returns>
+            <response code="200">The business partner was successfully retrieved.</response>
+            <response code="404">The business partner does not exist.</response>
+        </member>
+        <member name="M:Chef.Api.Controllers.V1.RecipeController.Get">
+            <summary>
+            Gets a list of weather
+            </summary>
+            <returns>The requested business partner.</returns>
+            <response code="200">The business partner was successfully retrieved.</response>
+            <response code="404">The business partner does not exist.</response>
+        </member>
+        <member name="M:Chef.Api.Controllers.V1.WeatherForecastController.Get(System.Nullable{System.Int32})">
+            <summary>
+            Gets a list of weather
+            </summary>
+            <param name="temperature">The requested business partner identifier.</param>
+            <returns>The requested business partner.</returns>
+            <response code="200">The business partner was successfully retrieved.</response>
+            <response code="404">The business partner does not exist.</response>
+        </member>
+    </members>
+</doc>
