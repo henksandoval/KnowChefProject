@@ -1,9 +1,10 @@
-﻿namespace Chef.Api.Startup
+﻿namespace Chef.Infrastructure.Configurations.Startup
 {
-	using Chef.Api.Swagger;
-	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Builder;
 	using Microsoft.AspNetCore.Mvc.ApiExplorer;
+	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Extensions.Options;
+	using Swagger;
 	using Swashbuckle.AspNetCore.SwaggerGen;
 
 	public static class SwaggerStartup
@@ -26,8 +27,8 @@
 			_ = services.AddSwaggerGen(options =>
 			   {
 				   options.OperationFilter<SwaggerDefaultValues>();
-				   DirectoryInfo baseDirectory = new DirectoryInfo(AppContext.BaseDirectory);
-				   foreach (FileInfo file in baseDirectory.EnumerateFiles("*.xml"))
+				   var baseDirectory = new DirectoryInfo(AppContext.BaseDirectory);
+				   foreach (var file in baseDirectory.EnumerateFiles("*.xml"))
 				   {
 					   options.IncludeXmlComments(file.FullName);
 				   }
@@ -44,10 +45,10 @@
 				.UseSwagger()
 				.UseSwaggerUI(options =>
 				{
-					foreach (var description in provider?.ApiVersionDescriptions)
+					provider?.ApiVersionDescriptions.ToList().ForEach(description =>
 					{
 						options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
-					}
+					});
 				});
 
 			return app;

@@ -1,4 +1,4 @@
-﻿namespace Chef.Api.Swagger
+﻿namespace Chef.Infrastructure.Configurations.Swagger
 {
 	using Microsoft.AspNetCore.Mvc.ApiExplorer;
 	using Microsoft.OpenApi.Models;
@@ -8,7 +8,7 @@
 	{
 		public void Apply(OpenApiOperation operation, OperationFilterContext context)
 		{
-			ApiDescription apiDescription = context.ApiDescription;
+			var apiDescription = context.ApiDescription;
 
 			operation.Deprecated = apiDescription.IsDeprecated();
 
@@ -17,9 +17,9 @@
 				return;
 			}
 
-			foreach (NonBodyParameter parameter in operation.Parameters.OfType<NonBodyParameter>())
+			foreach (var parameter in operation.Parameters.OfType<NonBodyParameter>())
 			{
-				ApiParameterDescription description = apiDescription.ParameterDescriptions.First(p => p.Name == parameter.Name);
+				var description = apiDescription.ParameterDescriptions.First(p => p.Name == parameter.Name);
 
 				if (parameter.Description is null)
 				{

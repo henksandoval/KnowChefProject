@@ -1,6 +1,6 @@
 using Chef.Api.Startup;
+using Chef.Infrastructure.Configurations.Startup;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 

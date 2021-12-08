@@ -1,4 +1,4 @@
-﻿namespace Chef.Api.Swagger
+﻿namespace Chef.Infrastructure.Configurations.Swagger
 {
 	using Microsoft.OpenApi.Models;
 

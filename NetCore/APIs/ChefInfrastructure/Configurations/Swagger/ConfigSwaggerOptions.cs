@@ -1,6 +1,7 @@
-﻿namespace Chef.Api.Swagger
+﻿namespace Chef.Infrastructure.Configurations.Swagger
 {
 	using Microsoft.AspNetCore.Mvc.ApiExplorer;
+	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Extensions.Options;
 	using Microsoft.OpenApi.Models;
 	using Swashbuckle.AspNetCore.SwaggerGen;
@@ -16,7 +17,7 @@
 
 		public void Configure(SwaggerGenOptions options)
 		{
-			foreach (ApiVersionDescription description in provider.ApiVersionDescriptions)
+			foreach (var description in provider.ApiVersionDescriptions)
 			{
 				options.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
 			}
@@ -24,19 +25,19 @@
 
 		private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
 		{
-			OpenApiInfo info = new OpenApiInfo()
+			var info = new OpenApiInfo
 			{
-				Title = "Business API",
+				Title = "API",
 				Version = description.ApiVersion.ToString(),
-				Description = "API Business documentation generated with Swagger, Swashbuckle, and API versioning.",
-				Contact = new OpenApiContact() { Name = "Grupo Kaizen", Email = "grupokaizen@grupokaizen.com" },
+				Description = "API documentation generated with Swagger, Swashbuckle, and API versioning.",
+				Contact = new OpenApiContact { Name = "Henk Sandoval", Email = "henkalexander.sandoval@gmail.com" },
 				TermsOfService = new Uri("https://your-terms-of-service.com/tos"),
-				License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+				License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
 			};
 
 			if (description.IsDeprecated)
 			{
-				info.Description += " This API version has been deprecated.";
+				info.Description += " This EndPoint version has been deprecated.";
 			}
 
 			return info;
