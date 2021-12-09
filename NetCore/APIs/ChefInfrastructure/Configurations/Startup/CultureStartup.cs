@@ -26,12 +26,12 @@
 					options.SupportedUICultures = supportedCultures;
 					options.RequestCultureProviders = new List<IRequestCultureProvider>
 					{
-						new RouteDataRequestCultureProvider()
+						new CultureProviderMiddleware()
 					};
 				})
 				.Configure<RouteOptions>(options =>
 				{
-					options.ConstraintMap.Add("culture", typeof(RouteConstraint));
+					options.ConstraintMap.Add("culture", typeof(RouteConstraintMiddleware));
 				});
 
 			return services;

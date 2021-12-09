@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chef.Api.Host", "NetCore\APIs\ChefApi\Chef.Api.Host.csproj", "{83FB5E6D-245D-48E7-B9D3-349EF49DCD52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chef.Api", "NetCore\APIs\ChefApi\Chef.Api.csproj", "{83FB5E6D-245D-48E7-B9D3-349EF49DCD52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetCore", "NetCore", "{0D8C6F28-8B13-4BB5-B736-8A6378F3C4D5}"
 EndProject

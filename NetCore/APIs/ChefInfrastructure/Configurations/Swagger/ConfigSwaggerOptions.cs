@@ -4,43 +4,48 @@
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Extensions.Options;
 	using Microsoft.OpenApi.Models;
+	using Shared.Utilities.Extensions;
 	using Swashbuckle.AspNetCore.SwaggerGen;
 
 	public class ConfigSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
 	{
 		private readonly IApiVersionDescriptionProvider provider;
+		private readonly OpenApiModel openApiInfo;
 
-		public ConfigSwaggerOptions(IApiVersionDescriptionProvider provider)
+		public ConfigSwaggerOptions(IApiVersionDescriptionProvider provider, IOptions<OpenApiModel> options)
 		{
 			this.provider = provider;
+			openApiInfo = options.Value;
 		}
 
 		public void Configure(SwaggerGenOptions options)
 		{
+			var info = CreateInfoForApiVersion();
+
 			foreach (var description in provider.ApiVersionDescriptions)
 			{
-				options.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
+				info.Version = description.ApiVersion.ToString();
+				info.Description += $" {openApiInfo?.DescriptionDeprecated ?? string.Empty}";
+				options.SwaggerDoc(description.GroupName, info);
 			}
 		}
 
-		private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
+		private OpenApiInfo CreateInfoForApiVersion() => new OpenApiInfo
 		{
-			var info = new OpenApiInfo
+			Title = openApiInfo.Title.ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.Title)),
+			Version = openApiInfo.Version.ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.Version)),
+			Description = openApiInfo.Description.ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.Description)),
+			Contact = new OpenApiContact
 			{
-				Title = "API",
-				Version = description.ApiVersion.ToString(),
-				Description = "API documentation generated with Swagger, Swashbuckle, and API versioning.",
-				Contact = new OpenApiContact { Name = "Henk Sandoval", Email = "henkalexander.sandoval@gmail.com" },
-				TermsOfService = new Uri("https://your-terms-of-service.com/tos"),
-				License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
-			};
-
-			if (description.IsDeprecated)
+				Name = openApiInfo.Contact?.Name.ThrowIfNullOrWhiteSpace(nameof(OpenApiContact.Name)),
+				Email = openApiInfo.Contact?.Email.ThrowIfNullOrWhiteSpace(nameof(OpenApiContact.Email))
+			},
+			TermsOfService = new Uri(openApiInfo.TermsOfService.ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.TermsOfService))),
+			License = new OpenApiLicense
 			{
-				info.Description += " This EndPoint version has been deprecated.";
+				Name = openApiInfo.License?.Name.ThrowIfNullOrWhiteSpace(nameof(OpenApiLicense.Name)),
+				Url = new Uri(openApiInfo?.License?.Url.ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.TermsOfService)) ?? "".ThrowIfNullOrWhiteSpace(nameof(OpenApiInfo.TermsOfService)))
 			}
-
-			return info;
-		}
+		};
 	}
 }

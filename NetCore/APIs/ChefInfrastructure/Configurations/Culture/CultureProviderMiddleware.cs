@@ -3,11 +3,11 @@
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Localization;
 
-	public class RouteDataRequestCultureProvider : RequestCultureProvider
+	public class CultureProviderMiddleware : RequestCultureProvider
 	{
 		private readonly int indexOfCulture = 1;
 
-		public override Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
+		public override Task<ProviderCultureResult?> DetermineProviderCultureResult(HttpContext httpContext)
 		{
 			if (httpContext == null)
 				throw new ArgumentNullException(nameof(httpContext));
@@ -16,7 +16,7 @@
 
 			var providerResultCulture = new ProviderCultureResult(culture);
 
-			return Task.FromResult(providerResultCulture);
+			return Task.FromResult<ProviderCultureResult?>(providerResultCulture);
 		}
 	}
 }
