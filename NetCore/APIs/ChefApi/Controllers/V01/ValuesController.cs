@@ -1,9 +1,10 @@
 ﻿namespace Chef.Api.Controllers.V01
 {
+	using Chef.Api.Constants;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Logging;
 
-	[ApiVersion("0.1")]
+	[ApiVersion(ApiVersions.V0_1)]
 	public class ValuesController : BaseController<ValuesController>
 	{
 		public ValuesController(ILogger<ValuesController> logger) : base(logger)

@@ -1,9 +1,10 @@
 namespace Chef.Api.Controllers.V1
 {
+	using Chef.Api.Constants;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 
-	[ApiVersion("1")]
+	[ApiVersion(ApiVersions.V1_0)]
 	public class WeatherForecastController : BaseController<WeatherForecastController>
 	{
 		public WeatherForecastController(ILogger<WeatherForecastController> logger)

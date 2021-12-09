@@ -1,14 +1,15 @@
 ﻿namespace Chef.Api.Controllers
 {
 	using System.ComponentModel;
+	using Chef.Api.Constants;
 	using Chef.Shared.Enums;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Logging;
 
 	[ApiController]
-	[Route("{culture:culture}/api/v{version:apiVersion}/[controller]")]
-	[Produces("application/json")]
+	[Route(ApiRoutes.TemplateRoute)]
+	[Produces(ApiProduces.ContentType)]
 	public abstract class BaseController<TController> : ControllerBase
 	{
 		protected readonly ILogger<TController> logger;

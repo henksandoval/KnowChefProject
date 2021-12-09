@@ -1,11 +1,12 @@
 namespace Chef.Api.Controllers.V01
 {
+	using Chef.Api.Constants;
 	using Chef.Core.Resources.Exceptions;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Localization;
 
-	[ApiVersion("0.1")]
+	[ApiVersion(ApiVersions.V0_1)]
 	public class WeatherForecastController : BaseController<WeatherForecastController>
 	{
 		private readonly IStringLocalizer<DomainResourceException> localizer;

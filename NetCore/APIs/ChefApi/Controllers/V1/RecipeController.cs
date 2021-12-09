@@ -1,11 +1,12 @@
 namespace Chef.Api.Controllers.V1
 {
+	using Chef.Api.Constants;
 	using Chef.Core.Domains.Models;
 	using Chef.Core.Resources.Exceptions;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Localization;
 
-	[ApiVersion("1")]
+	[ApiVersion(ApiVersions.V1_0)]
 	public class RecipeController : BaseController<RecipeController>
 	{
 		private readonly IStringLocalizer<DomainResourceException> localizer;
