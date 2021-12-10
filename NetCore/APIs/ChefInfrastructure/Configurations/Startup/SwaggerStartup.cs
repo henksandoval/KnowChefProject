@@ -6,12 +6,12 @@
 	using Microsoft.Extensions.Options;
 	using Swagger;
 	using Swashbuckle.AspNetCore.SwaggerGen;
+	using Swashbuckle.AspNetCore.SwaggerUI;
 
 	public static class SwaggerStartup
 	{
-		public static IServiceCollection ConfigSwagger(this IServiceCollection services)
+		public static IServiceCollection AddSwagger(this IServiceCollection services)
 		{
-			_ = services.AddSwaggerGen();
 			_ = services.AddApiVersioning(options =>
 			{
 				options.ReportApiVersions = true;
@@ -20,35 +20,36 @@
 			{
 				options.GroupNameFormat = "'v'VVV";
 				options.SubstituteApiVersionInUrl = true;
+			})
+			.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigSwaggerInfo>()
+			.AddSwaggerGen(options =>
+			{
+				var baseDirectory = new DirectoryInfo(AppContext.BaseDirectory);
+				foreach (var file in baseDirectory.EnumerateFiles("*.xml"))
+				{
+					options.IncludeXmlComments(file.FullName);
+				}
 			});
-
-			_ = services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigSwaggerOptions>();
-
-			_ = services.AddSwaggerGen(options =>
-			   {
-				   options.OperationFilter<SwaggerDefaultValues>();
-				   var baseDirectory = new DirectoryInfo(AppContext.BaseDirectory);
-				   foreach (var file in baseDirectory.EnumerateFiles("*.xml"))
-				   {
-					   options.IncludeXmlComments(file.FullName);
-				   }
-			   });
 
 			return services;
 		}
 
-		public static IApplicationBuilder ConfigSwagger(this IApplicationBuilder app)
+		public static IApplicationBuilder UseSwagger(this IApplicationBuilder app)
 		{
 			var provider = app.ApplicationServices.GetService<IApiVersionDescriptionProvider>();
 
-			_ = app
-				.UseSwagger()
+			_ = SwaggerBuilderExtensions
+				.UseSwagger(app)
 				.UseSwaggerUI(options =>
 				{
+					options.DefaultModelsExpandDepth(1);
 					provider?.ApiVersionDescriptions.ToList().ForEach(description =>
 					{
 						options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
 					});
+					options.RoutePrefix = "swagger";
+					options.DisplayRequestDuration();
+					options.DocExpansion(DocExpansion.List);
 				});
 
 			return app;

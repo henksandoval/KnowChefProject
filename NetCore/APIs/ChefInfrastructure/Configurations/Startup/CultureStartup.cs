@@ -5,7 +5,7 @@
 	using Microsoft.AspNetCore.Localization;
 	using Microsoft.AspNetCore.Routing;
 	using Microsoft.Extensions.DependencyInjection;
-	using Culture;
+	using Middlewares;
 
 	public static class CultureStartup
 	{

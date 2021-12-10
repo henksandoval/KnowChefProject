@@ -1,4 +1,4 @@
-﻿namespace Chef.Infrastructure.Configurations.Culture
+﻿namespace Chef.Infrastructure.Configurations.Middlewares
 {
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Localization;

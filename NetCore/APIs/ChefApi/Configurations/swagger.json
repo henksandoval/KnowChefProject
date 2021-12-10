@@ -1,0 +1,13 @@
+﻿{
+	"OpenApiInfo": {
+		"Title": "API",
+		"Description": "API documentation generated with Swagger, Swashbuckle, and API versioning.",
+		"DescriptionDeprecated": "This EndPoint version has been deprecated.",
+		"ContactName": "Henk Sandoval",
+		"ContactEmail": "henkalexander.sandoval@gmail.com",
+		"ContactUrl": "https://www.linkedin.com/in/henk-sandoval/",
+		"TermsOfService": "https://your-terms-of-service.com/tos",
+		"LicenseName": "MIT",
+		"LicenseUrl": "https://opensource.org/licenses/MIT"
+	}
+}

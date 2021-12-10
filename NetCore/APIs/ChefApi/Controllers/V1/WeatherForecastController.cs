@@ -1,6 +1,6 @@
 namespace Chef.Api.Controllers.V1
 {
-	using Chef.Api.Constants;
+	using Chef.Shared.Enums;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 

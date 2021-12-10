@@ -1,4 +1,4 @@
-﻿namespace Chef.Api.Constants
+﻿namespace Chef.Shared.Enums
 {
 	public class ApiVersions
 	{

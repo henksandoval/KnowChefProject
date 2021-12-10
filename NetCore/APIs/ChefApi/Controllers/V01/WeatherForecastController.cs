@@ -1,7 +1,7 @@
 namespace Chef.Api.Controllers.V01
 {
-	using Chef.Api.Constants;
 	using Chef.Core.Resources.Exceptions;
+	using Chef.Shared.Enums;
 	using Chef.Shared.Resources;
 	using Microsoft.AspNetCore.Mvc;
 	using Microsoft.Extensions.Localization;
