@@ -1,4 +1,4 @@
-﻿namespace Chef.Infrastructure.Configurations.Startup
+﻿namespace Chef.Infrastructure.Configurations.Extensions
 {
 	using System.Globalization;
 	using Microsoft.AspNetCore.Builder;
@@ -7,9 +7,9 @@
 	using Microsoft.Extensions.DependencyInjection;
 	using Middlewares;
 
-	public static class CultureStartup
+	public static class CultureExtensions
 	{
-		public static IServiceCollection ConfigCulture(this IServiceCollection services)
+		public static IServiceCollection AddCulture(this IServiceCollection services)
 		{
 			_ = services
 				.AddLocalization()

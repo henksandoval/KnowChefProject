@@ -1,11 +1,11 @@
-﻿namespace Chef.Infrastructure.Configurations
+﻿namespace Chef.Infrastructure.Configurations.Extensions
 {
 	using Microsoft.Extensions.Options;
 	using Microsoft.Extensions.DependencyInjection;
 	using Swagger;
 	using Microsoft.Extensions.Configuration;
 
-	public static class SettingStartup
+	public static class SettingExtensions
 	{
 		internal static IServiceCollection AddSettings(this IServiceCollection services, IConfiguration config)
 		{

@@ -1,8 +1,7 @@
 ﻿namespace Chef.Infrastructure
 {
-	using Configurations;
 	using Configurations.Middlewares;
-	using Configurations.Startup;
+	using Configurations.Extensions;
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.Extensions.Configuration;
 	using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +12,7 @@
 		{
 			_ = services
 				.AddSettings(configuration)
-				.ConfigCulture()
+				.AddCulture()
 				.AddSwagger();
 
 			return services;

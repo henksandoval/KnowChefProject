@@ -1,4 +1,4 @@
-﻿namespace Chef.Infrastructure.Configurations.Startup
+﻿namespace Chef.Infrastructure.Configurations.Extensions
 {
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -8,7 +8,7 @@
 	using Swashbuckle.AspNetCore.SwaggerGen;
 	using Swashbuckle.AspNetCore.SwaggerUI;
 
-	public static class SwaggerStartup
+	public static class SwaggerExtensions
 	{
 		public static IServiceCollection AddSwagger(this IServiceCollection services)
 		{
