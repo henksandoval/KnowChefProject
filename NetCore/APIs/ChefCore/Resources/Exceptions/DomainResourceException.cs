@@ -1,6 +1,6 @@
 ﻿namespace Chef.Core.Resources.Exceptions
 {
-	public class DomainResourceException
+	public partial class DomainResourceException
 	{
 	}
 }

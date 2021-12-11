@@ -4,5 +4,36 @@
         <name>Chef.Core</name>
     </assembly>
     <members>
+        <member name="T:Chef.Core.Resources.Exceptions.DomainResourceException">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Chef.Core.Resources.Exceptions.DomainResourceException.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Chef.Core.Resources.Exceptions.DomainResourceException.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Chef.Core.Resources.Exceptions.DomainResourceException.Err_0000">
+            <summary>
+              Looks up a localized string similar to Err_0000.
+            </summary>
+        </member>
+        <member name="P:Chef.Core.Resources.Exceptions.DomainResourceException.Err_0001">
+            <summary>
+              Looks up a localized string similar to Err_0001.
+            </summary>
+        </member>
+        <member name="P:Chef.Core.Resources.Exceptions.DomainResourceException.Err_0002">
+            <summary>
+              Looks up a localized string similar to Err_0002.
+            </summary>
+        </member>
     </members>
 </doc>

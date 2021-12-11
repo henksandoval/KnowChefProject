@@ -1,12 +1,13 @@
 ﻿namespace Chef.Infrastructure
 {
-	using Chef.Infrastructure.Configurations;
-	using Chef.Infrastructure.Configurations.Startup;
+	using Configurations;
+	using Configurations.Middlewares;
+	using Configurations.Startup;
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.Extensions.Configuration;
 	using Microsoft.Extensions.DependencyInjection;
 
-	public static class Program
+	public static class InfraestructureExtensions
 	{
 		public static IServiceCollection ServiceCollectionInfraestructure(this IServiceCollection services, IConfiguration configuration)
 		{
@@ -21,6 +22,7 @@
 		public static IApplicationBuilder ApplicationBuilderInfraestructure(this IApplicationBuilder app)
 		{
 			_ = app
+				.UseMiddleware<ExceptionMiddleware>()
 				.UseSwagger();
 
 			return app;

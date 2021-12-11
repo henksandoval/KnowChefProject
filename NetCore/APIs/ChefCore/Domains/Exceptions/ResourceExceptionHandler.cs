@@ -9,10 +9,9 @@
 		private static readonly ResourceManager domainExceptionResource = 
 			new ResourceManager("Chef.Core.Resources.Exceptions.DomainResourceException", Assembly.GetExecutingAssembly());
 
-		internal static string GetDomainExceptionMessage(string nameException)
+		internal static string GetDomainExceptionMessage(string codeError)
 		{
-			//ResourceSet rs = domainExceptionResource.GetResourceSet(CultureInfo.CreateSpecificCulture("es"), true, false);
-			return domainExceptionResource.GetString(nameException) ?? string.Empty;
+			return domainExceptionResource.GetString(codeError) ?? string.Empty;
 		}
 	}
 }

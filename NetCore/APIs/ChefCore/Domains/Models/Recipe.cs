@@ -1,6 +1,7 @@
 namespace Chef.Core.Domains.Models
 {
 	using Chef.Core.Domains.Exceptions;
+	using Chef.Core.Resources.Exceptions;
 	using Chef.Shared.Utilities.Extensions;
 
 	public class Recipe
@@ -33,7 +34,7 @@ namespace Chef.Core.Domains.Models
 				}
 				catch (Exception ex)
 				{
-					throw new DomainRecipeException(ResourceExceptionHandler.GetDomainExceptionMessage("RecipeNameInvalid"), ex);
+					throw new DomainException(nameof(DomainResourceException.Err_0000), ex);
 				}
 			}
 		}
@@ -49,7 +50,7 @@ namespace Chef.Core.Domains.Models
 				}
 				catch (Exception ex)
 				{
-					throw new DomainRecipeException(ResourceExceptionHandler.GetDomainExceptionMessage("RecipeDescriptionInvalid"), ex);
+					throw new DomainException(nameof(DomainResourceException.Err_0001), ex);
 				}
 			}
 		}

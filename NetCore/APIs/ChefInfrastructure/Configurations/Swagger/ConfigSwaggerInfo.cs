@@ -6,7 +6,7 @@
 	using Microsoft.OpenApi.Models;
 	using Shared.Utilities.Extensions;
 	using Swashbuckle.AspNetCore.SwaggerGen;
-	using OpenApiConf = Swagger.OpenApiInfo;
+	using OpenApiConf = OpenApiInfo;
 	using OpenApiInf = Microsoft.OpenApi.Models.OpenApiInfo;
 
 	public class ConfigSwaggerInfo : IConfigureOptions<SwaggerGenOptions>

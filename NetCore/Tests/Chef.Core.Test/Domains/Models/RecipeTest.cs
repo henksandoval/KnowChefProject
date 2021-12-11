@@ -23,7 +23,7 @@
 		[TestCase("Cose segreto piene", "", ExpectedResult = "The value by recipe description is empty or if only white spaces.", TestName = "ShouldThrowExceptionIfDescriptionIsEmpty")]
 		public string ShouldThrowExceptionIfIsEmpty(string name, string description)
 		{
-			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe(name, description));
+			var ex = Assert.Throws<DomainException>(() => new Recipe(name, description));
 
 			return ex?.Message ?? string.Empty;
 		}
@@ -34,7 +34,7 @@
 		{
 			var expectedResult = "El valor para descripción de receta esta vacio o contiene solo espacios en blanco.";
 
-			var ex = Assert.Throws<DomainRecipeException>(() => new Recipe("Consume los", string.Empty));
+			var ex = Assert.Throws<DomainException>(() => new Recipe("Consume los", string.Empty));
 
 			Assert.AreEqual(expectedResult, ex?.Message);
 		}

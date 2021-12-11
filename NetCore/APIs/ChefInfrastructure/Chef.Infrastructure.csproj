@@ -10,11 +10,13 @@
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />		
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ChefCore\Chef.Core.csproj" />
 	  <ProjectReference Include="..\ChefShared\Chef.Shared.csproj" />
 	</ItemGroup>
 
