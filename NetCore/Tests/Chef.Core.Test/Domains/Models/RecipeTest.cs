@@ -38,5 +38,11 @@
 
 			Assert.AreEqual(expectedResult, ex?.Message);
 		}
+
+		[Test]
+		public void ShouldBeAbleToLoadRecipeIncomplete()
+		{
+
+		}
 	}
 }
